@@ -38,4 +38,4 @@ ACCESS_CODE = 'xxxxxx' # Access code of your printer (found in LAN Only Mode Tab
 ```
 
 ## 📜 License
-MIT License - See [LICENSE.md](LICENSE.md) for details
+MIT License - See [LICENSE](LICENSE) for details
