@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+neontest.py
+neonweb.py
+
 # C extensions
 *.so
 
