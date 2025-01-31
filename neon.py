@@ -8,8 +8,6 @@ from adafruit_display_text import label
 import bambulabs_api as bl
 from adafruit_bitmap_font import bitmap_font
 
-# from blinka_displayio_pygamedisplay import PyGameDisplay
-
 '''
 This part is for Bambu Printer Connection.
 Enable LAN only Mode to find your Access Code & IP Address
