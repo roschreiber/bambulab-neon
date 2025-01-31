@@ -8,6 +8,8 @@ from adafruit_display_text import label
 import bambulabs_api as bl
 from adafruit_bitmap_font import bitmap_font
 
+# from blinka_displayio_pygamedisplay import PyGameDisplay
+
 '''
 This part is for Bambu Printer Connection.
 Enable LAN only Mode to find your Access Code & IP Address
@@ -16,7 +18,7 @@ Your Printer's Serial Number can be found under the "Device" tab
 IP = 'xxx.xxx.xxx.xxx'
 SERIAL = 'xxxxxx'
 ACCESS_CODE = 'xxxxxx'
-env = os.getenv("env", "debug")
+env = os.getenv("env", "prod")
 
 displayio.release_displays()
 matrix = rgbmatrix.RGBMatrix(
@@ -35,7 +37,7 @@ splash = displayio.Group()
 display.root_group = splash
 
 homing_frames = []
-for i in range(10):
+for i in range(2):
     frame = displayio.OnDiskBitmap(f"gifs/homing/frame_{i:02d}.bmp")
     homing_frames.append(frame)
 
@@ -45,17 +47,17 @@ for i in range(8):
     probing_frames.append(frame)
 
 printing_frames = []
-for i in range(14):
+for i in range(7):
     frame = displayio.OnDiskBitmap(f"gifs/printing/frame_{i:02d}.bmp")
     printing_frames.append(frame)
 
 unknown_frames = []
-for i in range(20):
+for i in range(2):
     frame = displayio.OnDiskBitmap(f"gifs/unknown/frame_{i:02d}.bmp")
     unknown_frames.append(frame)
 
 idle_frames = []
-for i in range(10):
+for i in range(6):
     frame = displayio.OnDiskBitmap(f"gifs/idle/frame_{i:02d}.bmp")
     idle_frames.append(frame)
 
