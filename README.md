@@ -36,3 +36,6 @@ IP = 'xxx.xxx.xxx.xxx' # IP address of your printer
 SERIAL = 'xxxxxx' # Serial number of your printer
 ACCESS_CODE = 'xxxxxx' # Access code of your printer (found in LAN Only Mode Tab)
 ```
+
+## 📜 License
+MIT License - See [LICENSE.md](LICENSE.md) for details
