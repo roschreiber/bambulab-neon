@@ -7,6 +7,16 @@ import os
 from adafruit_display_text import label
 from adafruit_bitmap_font import bitmap_font
 
+'''
+IMPORTANT:
+
+This is just a web demo and it does not really do anything, its just here to show you the UI! 
+Use the real code which you can find in my github repo:
+
+https://github.com/roschreiber/bambulab-neon
+
+'''
+
 displayio.release_displays()
 matrix = rgbmatrix.RGBMatrix(
     width=64, height=32, bit_depth=4,
