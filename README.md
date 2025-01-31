@@ -2,6 +2,11 @@
 
 A real-time status display for [BambuLab](https://bambulab.com/) 3D printers on 64x32 RGB LED matrices
 
+### 💻 Display Screenshots
+
+![bl-neon display showing printer stats like 60°c bed and 200°c nozzle, the printer is currently homing.](preview.jpg)
+<p align="center"><h6>This shows that the printer is currently running and the bed is at 60°c and the nozzle is at 200°c. It's currently homing all axes.</h6></p>
+
 ## 🚩 Hack Club
 
 This project was created as part of the Neon [Hack Club](https://hackclub.com/) YSWS.
