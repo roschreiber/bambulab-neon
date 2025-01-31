@@ -1,11 +1,12 @@
 import time
 import board
 import displayio
+import rgbmatrix
+import framebufferio
 import os
 from adafruit_display_text import label
 from adafruit_bitmap_font import bitmap_font
 
-# Initialize Display
 displayio.release_displays()
 matrix = rgbmatrix.RGBMatrix(
     width=64, height=32, bit_depth=4,
@@ -15,26 +16,18 @@ matrix = rgbmatrix.RGBMatrix(
 )
 display = framebufferio.FramebufferDisplay(matrix, auto_refresh=False)
 
-# Load a small bitmap font
-font = bitmap_font.load_font("font5x8.bdf")  # Ensure you have this font file
-
-# Load home icon
-home_icon = displayio.OnDiskBitmap("gifs/home_icon.bmp")
-
-# Create display group
+font = bitmap_font.load_font("font5x8.bdf")
+home_icon = displayio.OnDiskBitmap("gifs/unknown/frame_00.bmp")
 splash = displayio.Group()
 display.root_group = splash
 
 def update_display(status, bed_temp, nozzle_temp):
-    # Clear previous text
     while len(splash) > 0:
         splash.pop()
     
-    # Add home icon
     home_tilegrid = displayio.TileGrid(home_icon, pixel_shader=home_icon.pixel_shader, x=40, y=0)
     splash.append(home_tilegrid)
     
-    # Use bitmap font for text
     status_text = label.Label(
         font,
         text=f"S:{status}",
@@ -61,22 +54,11 @@ def update_display(status, bed_temp, nozzle_temp):
         y=24
     )
     splash.append(nozzle_text)
-    
-    nozzle_text = label.Label(
-        font,
-        text=f"N{nozzle_temp}",  # Use placeholder text
-        color=0x00FF00,
-        x=34,
-        y=24
-    )
-    splash.append(nozzle_text)
 
 if __name__ == '__main__':
     print('Starting Display Monitor')
-
     try:
         while True:
-            # Use placeholder values
             status = "OK"
             bed_temp = 60
             nozzle_temp = 200
